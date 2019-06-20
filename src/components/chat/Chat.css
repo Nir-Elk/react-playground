@@ -1,0 +1,9 @@
+.chat-container {
+    margin: 5% 5% 0 5%;
+    cursor: default;
+}
+
+.messages{
+    height: 60vh;
+    overflow-y: auto;
+}
