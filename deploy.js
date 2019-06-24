@@ -4,8 +4,8 @@ const path = require('path');
 const mainRouter = express.Router();
 bodyParser = require('body-parser');
 
-
-const deploy = app.listen(8080, () => {
+PORT = process.env.PORT || 8080;
+const deploy = app.listen(PORT, () => {
     console.log(`Express running → PORT ${deploy.address().port}`);
 });
 
