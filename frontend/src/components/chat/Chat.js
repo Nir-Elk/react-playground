@@ -12,7 +12,7 @@ let socket;
 class Chat extends React.Component {
 
     constructor(props, context) {
-        socket = openSocket('https://react-my-playground.herokuapp.com:8080');
+        socket = openSocket('https://react-my-playground.herokuapp.com');
 
         super(props, context);
         if(props.initialState) {
