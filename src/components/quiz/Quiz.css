@@ -1,0 +1,14 @@
+.main-container {
+    width: 50%;
+    margin: 5% auto 0 auto;
+}
+
+.flex-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.Centered{
+    text-align: center;
+}

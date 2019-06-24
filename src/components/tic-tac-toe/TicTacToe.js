@@ -2,8 +2,7 @@ import React from "react";
 import Cell from "./Cell"
 import Winner from "./Winner";
 import "./TicTacToe.css"
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
+import {Row,Col} from "react-bootstrap";
 
 class TicTacToe extends React.Component {
 
