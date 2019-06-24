@@ -52,7 +52,7 @@ class Quiz extends React.Component {
         return (
             <div className={"main-container"}>
                 {this.state.currentQuestion === this.state.questions.length &&
-                <GameOver grade={this.calcGrade()} init={this.init}/>}
+                    <GameOver grade={this.calcGrade()} init={this.init}/>}
                 {this.state.currentQuestion !== this.state.questions.length && <div>
                     <Question question={this.state.questions[this.state.currentQuestion]}
                               selectAnswer={this.selectAnswer}/>
