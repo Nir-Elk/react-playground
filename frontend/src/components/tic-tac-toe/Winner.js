@@ -4,7 +4,7 @@ import Sign from "./Sign"
 class Winner extends React.Component {
 
     render(props) {
-        const text = this.props.winner===0?"No one is win :P":"The Winner is: ";
+        const text = this.props.winner===0?"There is no winner":"The Winner is: ";
         return (
             <div style={{fontSize: '3rem'}}>
                 {text}
