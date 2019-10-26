@@ -6,6 +6,7 @@ import openSocket from 'socket.io-client'
 import ClientsList from './ClientsList'
 import {Col, Container, Row} from "react-bootstrap";
 import './Chat.css'
+import LangContext from '../../LangContext'
 let socket;
 
 
@@ -65,22 +66,33 @@ class Chat extends React.Component {
 
     render() {
         return (
-            <div className="chat-container">
-                {this.state.name === null &&
-                <NameChoose setName={this.setName}/>
+            <LangContext.Conumer>
+                {
+                    dictionary => {
+
+                        console.log(dictionary);
+                        return (
+                            <div className="chat-container">
+                                {this.state.name === null &&
+                                <NameChoose setName={this.setName}/>
+                                }
+                                {this.state.name !== null &&
+                                <Container>
+                                    <Row>
+                                        <Col xs={3}><ClientsList clients={this.state.clients}/></Col>
+                                        <Col xs={9}>
+                                            <Messages messages={this.state.messages}/>
+                                            <SendMessage sendMessage={this.sendMessage}/>
+                                        </Col>
+                                    </Row>
+                                </Container>
+                                }
+                            </div>
+                        );
+                    }
                 }
-                {this.state.name !== null &&
-                <Container>
-                    <Row>
-                        <Col xs={3}><ClientsList clients={this.state.clients}/></Col>
-                        <Col xs={9}>
-                            <Messages messages={this.state.messages}/>
-                            <SendMessage sendMessage={this.sendMessage}/>
-                        </Col>
-                    </Row>
-                </Container>
-                }
-            </div>
+
+            </LangContext.Conumer>
         );
     }
 }

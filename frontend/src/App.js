@@ -1,6 +1,6 @@
 import React from 'react';
 import {BrowserRouter as Router, Link, Route} from 'react-router-dom'
-import {Nav, Navbar, NavDropdown} from "react-bootstrap";
+import {Navbar} from "react-bootstrap";
 import logo from './logo.svg';
 import Chat from './components/chat/Chat';
 import TicTacToe from './components/tic-tac-toe/TicTacToe';
@@ -9,8 +9,10 @@ import MainPage from './components/mainPage/MainPage';
 import english from './dictionaries/english';
 import hebrew from './dictionaries/hebrew';
 import LangContext from './LangContext'
+import Nav from "react-bootstrap/Nav";
+import NavDropdown from "react-bootstrap/NavDropdown";
 
-const codeToDic = {en:english,heb:hebrew};
+const codeToDic = {en: english, heb: hebrew};
 
 class App extends React.Component {
 
@@ -25,11 +27,11 @@ class App extends React.Component {
         this.setState(someState);
     }
 
-
-
     render() {
+        const dictionary = codeToDic[this.state.lang];
+
         return (
-            <LangContext.Provider value={codeToDic[this.state.lang]}>
+            <LangContext.Provider value={dictionary}>
                 <Router>
                     <Navbar bg="dark" variant="dark">
 
@@ -55,7 +57,7 @@ class App extends React.Component {
                             </NavDropdown>
                         </Nav>
                         <Nav className="ml-auto pr-md-5" style={{marginRight: '30px'}}>
-                            <NavDropdown title={dictionary.langMenu.title} id="basic-nav-dropdown">
+                            <NavDropdown title={dictionary["langMenu"]["title"]} id="basic-nav-dropdown">
                                 {
                                     ["en", "heb"].map(code =>
                                         <NavDropdown.Item onClick={() => {
@@ -68,15 +70,18 @@ class App extends React.Component {
 
                     <Route exact path={'/'} component={MainPage}/>
                     <Route path={'/chat'}
-                           component={() => <Chat initialState={this.state.chatState} notifyApp={this.notify}/>}/>
+                           component={() => <Chat initialState={this.state.chatState}
+                                                  notifyApp={this.notify}/>}/>
                     <Route path={'/ticTacToe'}
                            component={() => <TicTacToe initialState={this.state.ticTacToeState}
                                                        notifyApp={this.notify}/>}/>
                     <Route path={'/quiz'}
-                           component={() => <Quiz initialState={this.state.quizState} notifyApp={this.notify}/>}/>
+                           component={() => <Quiz initialState={this.state.quizState}
+                                                  notifyApp={this.notify}/>}/>
 
                 </Router>
             </LangContext.Provider>
+
         );
     }
 }
