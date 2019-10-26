@@ -1,0 +1,19 @@
+{
+  "code": "en",
+  "siteName": "React PlayGround",
+  "menu": {
+    "title": "Project",
+    "items": {
+      "chat": "Chat",
+      "ticTacToe": "Tic Tac Toe",
+      "quiz": "Quiz"
+    }
+  },
+  "langMenu": {
+  "title": "lang",
+  "items": {
+    "en": "english",
+    "heb": "עברית"
+  }
+}
+}
