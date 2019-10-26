@@ -10,10 +10,14 @@
     }
   },
   "langMenu": {
-  "title": "lang",
-  "items": {
-    "en": "english",
-    "heb": "עברית"
+    "title": "lang",
+    "items": {
+      "en": "english",
+      "heb": "עברית"
+    }
+  },
+  "chat": {
+    "typeYourNameHere": "כתוב את שמך כאן",
+    "name": "שם"
   }
-}
 }

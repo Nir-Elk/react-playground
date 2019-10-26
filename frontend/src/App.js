@@ -62,7 +62,7 @@ class App extends React.Component {
                                     ["en", "heb"].map(code =>
                                         <NavDropdown.Item onClick={() => {
                                             console.log(code);
-                                        }}>{dictionary.langMenu.items[code]}</NavDropdown.Item>)
+                                        }}>{dictionary["langMenu"]["items"][code]}</NavDropdown.Item>)
                                 }
                             </NavDropdown>
                         </Nav>
@@ -81,7 +81,6 @@ class App extends React.Component {
 
                 </Router>
             </LangContext.Provider>
-
         );
     }
 }

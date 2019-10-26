@@ -6,7 +6,7 @@ import openSocket from 'socket.io-client'
 import ClientsList from './ClientsList'
 import {Col, Container, Row} from "react-bootstrap";
 import './Chat.css'
-import LangContext from '../../LangContext'
+
 let socket;
 
 
@@ -17,11 +17,10 @@ class Chat extends React.Component {
         //socket = openSocket('http://localhost:8080');
 
         super(props, context);
-        if(props.initialState) {
+        if (props.initialState) {
             this.state = props.initialState;
-            socket.emit('userConnected', {name:this.state.name});
-        }
-        else
+            socket.emit('userConnected', {name: this.state.name});
+        } else
             this.state = {name: null, messages: [], clients: []};
         this.setName = this.setName.bind(this);
         this.sendMessage = this.sendMessage.bind(this);
@@ -49,7 +48,7 @@ class Chat extends React.Component {
 
     componentWillUnmount() {
         socket.disconnect();
-        this.props.notifyApp({chatState:this.state});
+        this.props.notifyApp({chatState: this.state});
     }
 
     setName(name) {
@@ -66,33 +65,22 @@ class Chat extends React.Component {
 
     render() {
         return (
-            <LangContext.Conumer>
-                {
-                    dictionary => {
-
-                        console.log(dictionary);
-                        return (
-                            <div className="chat-container">
-                                {this.state.name === null &&
-                                <NameChoose setName={this.setName}/>
-                                }
-                                {this.state.name !== null &&
-                                <Container>
-                                    <Row>
-                                        <Col xs={3}><ClientsList clients={this.state.clients}/></Col>
-                                        <Col xs={9}>
-                                            <Messages messages={this.state.messages}/>
-                                            <SendMessage sendMessage={this.sendMessage}/>
-                                        </Col>
-                                    </Row>
-                                </Container>
-                                }
-                            </div>
-                        );
-                    }
+            <div className="chat-container">
+                {this.state.name === null &&
+                <NameChoose setName={this.setName}/>
                 }
-
-            </LangContext.Conumer>
+                {this.state.name !== null &&
+                <Container>
+                    <Row>
+                        <Col xs={3}><ClientsList clients={this.state.clients}/></Col>
+                        <Col xs={9}>
+                            <Messages messages={this.state.messages}/>
+                            <SendMessage sendMessage={this.sendMessage}/>
+                        </Col>
+                    </Row>
+                </Container>
+                }
+            </div>
         );
     }
 }

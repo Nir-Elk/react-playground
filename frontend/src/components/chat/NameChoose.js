@@ -1,5 +1,6 @@
 import React from 'react'
-import {InputGroup, FormControl} from 'react-bootstrap'
+import {FormControl, InputGroup} from 'react-bootstrap'
+import LangContext from "../../LangContext";
 
 
 class NameChoose extends React.Component {
@@ -17,7 +18,7 @@ class NameChoose extends React.Component {
     }
 
     handleKeyPress(event) {
-        if(event.key === 'Enter')
+        if (event.key === 'Enter')
             this.handleSubmit();
     }
 
@@ -28,20 +29,24 @@ class NameChoose extends React.Component {
 
     render(props) {
         return (
-            <div>
-                <InputGroup className="mb-3">
-                    <InputGroup.Prepend>
-                        <InputGroup.Text id="basic-addon1">Name:</InputGroup.Text>
-                    </InputGroup.Prepend>
-                    <FormControl
-                        value={this.state.name}
-                        onChange={this.handleChange}
-                        onKeyPress={this.handleKeyPress}
-                        placeholder="type your name here"
-                        aria-describedby="basic-addon1"
-                    />
-                </InputGroup>
-            </div>
+            <LangContext.Consumer>
+                {
+                    ({chat}) => (
+                        <InputGroup className="mb-3">
+                            <InputGroup.Prepend>
+                                <InputGroup.Text id="basic-addon1">{chat["name"]}:</InputGroup.Text>
+                            </InputGroup.Prepend>
+                            <FormControl
+                                value={this.state.name}
+                                onChange={this.handleChange}
+                                onKeyPress={this.handleKeyPress}
+                                placeholder={chat["typeYourNameHere"]}
+                                aria-describedby="basic-addon1"
+                            />
+                        </InputGroup>)
+                }
+            </LangContext.Consumer>
+
         );
     }
 }
