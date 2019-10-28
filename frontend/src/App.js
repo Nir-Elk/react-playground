@@ -12,7 +12,6 @@ import hebrew from './dictionaries/hebrew';
 import LangContext from './LangContext'
 import Nav from "react-bootstrap/Nav";
 import NavDropdown from "react-bootstrap/NavDropdown";
-import StatesContext from "./StatesContext";
 
 const codeToDic = {en: english, heb: hebrew};
 
