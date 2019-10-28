@@ -1,5 +1,6 @@
 import React from 'react'
 import {InputGroup, FormControl} from 'react-bootstrap'
+import LangContext from "../../LangContext";
 
 
 class SendMessage extends React.Component {
@@ -17,7 +18,7 @@ class SendMessage extends React.Component {
     }
 
     handleKeyPress(event) {
-        if(event.key === 'Enter')
+        if (event.key === 'Enter')
             this.handleSubmit();
     }
 
@@ -30,22 +31,28 @@ class SendMessage extends React.Component {
 
     render() {
         return (
-            <div>
-                <InputGroup className="mb-3">
-                    <InputGroup.Prepend>
-                        <InputGroup.Text id="basic-addon1">Message:</InputGroup.Text>
-                    </InputGroup.Prepend>
-                    <FormControl
-                        value={this.state.msg}
-                        onChange={this.handleChange}
-                        onKeyPress={this.handleKeyPress}
-                        placeholder="type your message here"
-                    />
-                    <InputGroup.Append>
-                        <InputGroup.Text id="basic-addon2" onClick={this.handleSubmit}>Send</InputGroup.Text>
-                    </InputGroup.Append>
-                </InputGroup>
-            </div>
+            <LangContext.Consumer>
+                {
+                    ({chat}) => (
+                        <div>
+                            <InputGroup className="mb-3">
+                                <InputGroup.Prepend>
+                                    <InputGroup.Text id="basic-addon1">{chat["message"]}</InputGroup.Text>
+                                </InputGroup.Prepend>
+                                <FormControl
+                                    value={this.state.msg}
+                                    onChange={this.handleChange}
+                                    onKeyPress={this.handleKeyPress}
+                                    placeholder={chat["typeMesage"]}
+                                />
+                                <InputGroup.Append>
+                                    <InputGroup.Text id="basic-addon2"
+                                                     onClick={this.handleSubmit}>{chat["send"]}</InputGroup.Text>
+                                </InputGroup.Append>
+                            </InputGroup>
+                        </div>)
+                }
+            </LangContext.Consumer>
 
         );
     }

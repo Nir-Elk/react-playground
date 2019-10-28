@@ -16,9 +16,12 @@ class TicTacToe extends React.Component {
         this.put = this.put.bind(this);
     }
 
+    componentWillMount() {
+    }
+
     componentWillUnmount() {
-        // TODO: fix multi states
-        // this.props.notifyApp({ticTacToeState:this.state});
+        // TODO: fix multi save states
+        //this.props.notifyApp({ticTacToeState:this.state});
     }
 
     clearData() {
@@ -90,10 +93,10 @@ class TicTacToe extends React.Component {
                 {!this.state.winner && this.state.turn < 9 &&
 
                 this.state.board.map((row, x) =>
-                    <Row className="flex flex-column">
+                    <Row key={`${row}${x}`} className="flex flex-column" >
                         {
                             row.map((cell, y) =>
-                                <Col sm={1}>
+                                <Col sm={1} key={`${row}${x}${cell}${y}`}>
                                     <Cell cell={cell} x={x} y={y} put={this.put}/>
                                 </Col>
                             )

@@ -54,7 +54,7 @@ io.on('connection', client => {
     });
     client.on('disconnect', () => {
         if(client.name)
-            client.broadcast.emit('userDisconnected', {name: client.name})
+            client.broadcast.emit('userDisconnected', {name: client.name});
         clients.splice(clients.indexOf(client), 1);
     });
 });

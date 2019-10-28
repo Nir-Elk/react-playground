@@ -2,7 +2,7 @@
   "code": "en",
   "siteName": "React PlayGround",
   "menu": {
-    "title": "Project",
+    "title": "Projects",
     "items": {
       "chat": "Chat",
       "ticTacToe": "Tic Tac Toe",
@@ -10,14 +10,35 @@
     }
   },
   "langMenu": {
-    "title": "lang",
+    "title": "Languages",
     "items": {
       "en": "english",
       "heb": "עברית"
     }
   },
+  "mainPage": {
+    "visit": "visit",
+    "text": "and take a big breath."
+  },
   "chat": {
     "typeYourNameHere": "Type your name here",
-    "name": "Name"
+    "name": "Name",
+    "onlineClients": "Online Clients:",
+    "message":"Message:",
+    "typeMesage":"type your message here",
+    "send":"Send"
+  },
+  "ticTacToe": {
+    "noWinner": "There is no winner",
+    "theWinner": "The Winner is:",
+    "startOver": "Start Over"
+  },
+  "quiz": {
+    "back": "Back",
+    "next": "Next",
+    "done": "Done",
+    "startOver": "Start Over",
+    "gameOver": "Game Over!",
+    "grade": "Your Grade is "
   }
 }

@@ -1,16 +1,22 @@
 import React from 'react'
 import {Button} from "react-bootstrap";
+import LangContext from "../../LangContext";
 
 class GameOver extends React.Component {
 
     render(props) {
-        const {grade,init} = this.props;
+        const {grade, init} = this.props;
         return (
-            <div className={"Centered"}>
-                <h3>Game Over!</h3>
-                <h6>Your Grade is {grade}</h6>
-                <Button type="button" variant="secondary" onClick={()=>init()}>Start Over</Button>
-            </div>
+            <LangContext.Consumer>
+                {
+                    ({quiz}) => (
+                        <div className={"Centered"}>
+                            <h3>{quiz["gameOver"]}</h3>
+                            <h6>{quiz["grade"]}{grade}</h6>
+                            <Button type="button" variant="secondary" onClick={() => init()}>{quiz["startOver"]}</Button>
+                        </div>)
+                }
+            </LangContext.Consumer>
         );
     }
 }
