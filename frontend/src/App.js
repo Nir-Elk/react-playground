@@ -80,7 +80,6 @@ class App extends React.Component {
                             </NavDropdown>
                         </Nav>
                     </Navbar>
-                    <StatesContext.Provider value={this.state}>
                         <Route exact path={'/'} component={MainPage}/>
                         <Route path={'/chat'}
                                component={() => <Chat initialState={this.state.chatState}
@@ -91,7 +90,6 @@ class App extends React.Component {
                         <Route path={'/quiz'}
                                component={() => <Quiz initialState={this.state.quizState}
                                                       notifyApp={this.notify}/>}/>
-                    </StatesContext.Provider>
                 </Router>
             </LangContext.Provider>
         );
