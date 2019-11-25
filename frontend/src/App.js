@@ -69,16 +69,16 @@ class App extends React.Component {
                                 }
                             </NavDropdown>
                         </Nav>
-                        <Nav className="ml-auto pr-md-5" style={{marginRight: '30px'}}>
-                            <NavDropdown title={dictionary["langMenu"]["title"]} id="basic-nav-dropdown">
-                                {
-                                    ["en", "heb"].map((code, index) =>
-                                        <NavDropdown.Item key={`${code}${index}`} onClick={() => {
-                                            this.setLang(code);
-                                        }}>{dictionary["langMenu"]["items"][code]}</NavDropdown.Item>)
-                                }
-                            </NavDropdown>
-                        </Nav>
+                        {/*<Nav className="ml-auto pr-md-5" style={{marginRight: '30px'}}>*/}
+                        {/*    <NavDropdown title={dictionary["langMenu"]["title"]} id="basic-nav-dropdown">*/}
+                        {/*        {*/}
+                        {/*            ["en", "heb"].map((code, index) =>*/}
+                        {/*                <NavDropdown.Item key={`${code}${index}`} onClick={() => {*/}
+                        {/*                    this.setLang(code);*/}
+                        {/*                }}>{dictionary["langMenu"]["items"][code]}</NavDropdown.Item>)*/}
+                        {/*        }*/}
+                        {/*    </NavDropdown>*/}
+                        {/*</Nav>*/}
                     </Navbar>
                         <Route exact path={'/'} component={MainPage}/>
                         <Route path={'/chat'}
