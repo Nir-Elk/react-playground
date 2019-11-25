@@ -12,6 +12,7 @@ import hebrew from './dictionaries/hebrew';
 import LangContext from './LangContext'
 import Nav from "react-bootstrap/Nav";
 import NavDropdown from "react-bootstrap/NavDropdown";
+import Gallery from "./components/gallery/Gallery";
 
 const codeToDic = {en: english, heb: hebrew};
 
@@ -19,7 +20,7 @@ class App extends React.Component {
 
     constructor(props, context) {
         super(props, context);
-        this.state = {chatState: null, ticTacToeState: null, quizState: null, lang: "en"};
+        this.state = {chatState: null, ticTacToeState: null, quizState: null, galleryState: null, lang: "en"};
 
         this.notify = this.notify.bind(this);
         this.setLang = this.setLang.bind(this);
@@ -59,7 +60,7 @@ class App extends React.Component {
                         <Nav className="ml-auto pr-md-5" style={{marginRight: '30px'}}>
                             <NavDropdown title={dictionary.menu.title} id="basic-nav-dropdown">
                                 {
-                                    ["chat", "ticTacToe", "quiz"].map((item, index) =>
+                                    ["chat", "ticTacToe", "quiz", "gallery"].map((item, index) =>
                                         <LinkContainer key={`${item}${index}`} to={'/' + item}>
                                             <NavDropdown.Item>
                                                 {dictionary.menu.items[item]}
@@ -80,16 +81,19 @@ class App extends React.Component {
                         {/*    </NavDropdown>*/}
                         {/*</Nav>*/}
                     </Navbar>
-                        <Route exact path={'/'} component={MainPage}/>
-                        <Route path={'/chat'}
-                               component={() => <Chat initialState={this.state.chatState}
-                                                      notifyApp={this.notify}/>}/>
-                        <Route path={'/ticTacToe'}
-                               component={() => <TicTacToe initialState={this.state.ticTacToeState}
-                                                           notifyApp={this.notify}/>}/>
-                        <Route path={'/quiz'}
-                               component={() => <Quiz initialState={this.state.quizState}
-                                                      notifyApp={this.notify}/>}/>
+                    <Route exact path={'/'} component={MainPage}/>
+                    <Route path={'/chat'}
+                           component={() => <Chat initialState={this.state.chatState}
+                                                  notifyApp={this.notify}/>}/>
+                    <Route path={'/ticTacToe'}
+                           component={() => <TicTacToe initialState={this.state.ticTacToeState}
+                                                       notifyApp={this.notify}/>}/>
+                    <Route path={'/quiz'}
+                           component={() => <Quiz initialState={this.state.quizState}
+                                                  notifyApp={this.notify}/>}/>
+                    <Route path={'/gallery'}
+                           component={() => <Gallery initialState={this.state.galleryState}
+                                                     notifyApp={this.notify}/>}/>
                 </Router>
             </LangContext.Provider>
         );

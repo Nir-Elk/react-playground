@@ -6,7 +6,8 @@
     "items": {
       "chat": "Chat",
       "ticTacToe": "Tic Tac Toe",
-      "quiz": "Quiz"
+      "quiz": "Quiz",
+      "gallery": "Gallery"
     }
   },
   "langMenu": {
@@ -36,6 +37,13 @@
   "quiz": {
     "back": "Back",
     "next": "Next",
+    "done": "Done",
+    "startOver": "Start Over",
+    "gameOver": "Game Over!",
+    "grade": "Your Grade is "
+  },
+  "search": {
+    "search": "Search",
     "done": "Done",
     "startOver": "Start Over",
     "gameOver": "Game Over!",
