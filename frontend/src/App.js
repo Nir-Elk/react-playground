@@ -60,7 +60,7 @@ class App extends React.Component {
                         <Nav className="ml-auto pr-md-5" style={{marginRight: '30px'}}>
                             <NavDropdown title={dictionary.menu.title} id="basic-nav-dropdown">
                                 {
-                                    ["chat", "ticTacToe", "quiz", "gallery"].map((item, index) =>
+                                    ["chat", "ticTacToe", "quiz"].map((item, index) =>
                                         <LinkContainer key={`${item}${index}`} to={'/' + item}>
                                             <NavDropdown.Item>
                                                 {dictionary.menu.items[item]}

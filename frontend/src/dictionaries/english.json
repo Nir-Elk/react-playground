@@ -6,8 +6,7 @@
     "items": {
       "chat": "Chat",
       "ticTacToe": "Tic Tac Toe",
-      "quiz": "Quiz",
-      "gallery": "Gallery"
+      "quiz": "Quiz"
     }
   },
   "langMenu": {
