@@ -2,7 +2,7 @@ import React from 'react'
 import './Gallery.css'
 import Search from "../gallery/Search";
 import axios from "axios";
-import {Image} from "react-bootstrap";
+import GalleryImages from "../gallery/GalleryImages";
 
 class Gallery extends React.Component {
     constructor(props, context) {
@@ -36,6 +36,20 @@ class Gallery extends React.Component {
         });
     }
 
+    addImages(images) {
+        this.setState(prevState => {
+            const newImages = images.map(img => {
+                let newImg = {
+                    small: `https://live.staticflickr.com/${img.server}/${img.id}_${img.secret}_q.jpg`,
+                    big: `https://live.staticflickr.com/${img.server}/${img.id}_${img.secret}_l.jpg`
+                };
+                return newImg;
+            });
+            prevState.images = [...prevState.images, ...newImages];
+            return prevState;
+        });
+    }
+
     getDataAxios(text) {
         axios.get("https://api.flickr.com/services/rest",
             {
@@ -44,7 +58,7 @@ class Gallery extends React.Component {
                     api_key: '11e6b6f56a3ea670933e10ccc5f10388',
                     text: text,
                     page: '1',
-                    per_page: '25',
+                    per_page: '250',
                     sort: 'relevance',
                     format: 'json',
                     nojsoncallback: '1'
@@ -63,15 +77,23 @@ class Gallery extends React.Component {
             });
     }
 
+    handleScroll(e) {
+        console.log("lala");
+        window.onscroll = function (ev) {
+            if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+                alert("you're at the bottom of the page");
+            }
+        };
+    }
+
     render() {
         return (
             <div>
-                <Search setSearch={this.setSearch}/>
-                {
-                    !!this.state.images &&
-                    this.state.images.map(img => <Image
-                        src={img.small} rounded />)
-                }
+                <div className="gallery-container">
+                    <Search setSearch={this.setSearch}/>
+                    <GalleryImages images={this.state.images}/>
+                </div>
+                ok to you
             </div>
         );
     }
