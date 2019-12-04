@@ -5,14 +5,15 @@ import axios from "axios";
 import GalleryImages from "../gallery/GalleryImages";
 
 class Gallery extends React.Component {
-    constructor(props, context) {
-        super(props, context);
+    constructor(props) {
+        super(props);
         if (props.initialState) {
             this.state = props.initialState;
         } else
-            this.state = {search: null, images: null};
+            this.state = {search: '', images: []};
         this.setSearch = this.setSearch.bind(this);
     }
+
 
     setSearch(text) {
         this.setState(prevState => {
@@ -76,20 +77,11 @@ class Gallery extends React.Component {
                 }
             });
     }
-
-    handleScroll(e) {
-        console.log("lala");
-        window.onscroll = function (ev) {
-            if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
-                alert("you're at the bottom of the page");
-            }
-        };
-    }
-
+    
     render() {
         return (
             <div>
-                <div className="gallery-container">
+                <div className="gallery-container" onScroll={this.handleScroll}>
                     <Search setSearch={this.setSearch}/>
                     <GalleryImages images={this.state.images}/>
                 </div>

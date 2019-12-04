@@ -2,37 +2,23 @@ import React from "react";
 import Cell from "./Cell"
 import Winner from "./Winner";
 import "./TicTacToe.css"
-import {Row,Col} from "react-bootstrap";
+import {Row, Col} from "react-bootstrap";
+import PlaygroundContext, {PlaygroundContextConsumer} from "../../PlaygroundContext";
+import {getInitialStates, ticTacToe} from "../../hooks/usePlayground";
+import Sign from "./Sign";
 
 class TicTacToe extends React.Component {
 
     constructor(props, context) {
         super(props, context);
-        if (props.initialState)
-            this.state = props.initialState;
-        else
-            this.state = this.clearData();
-        this.init = this.init.bind(this);
-        this.put = this.put.bind(this);
+        this.service = context[ticTacToe];
     }
 
-    componentWillMount() {
-    }
+    init = () => {
+        this.service.set(getInitialStates(ticTacToe));
+    };
 
-    componentWillUnmount() {
-        // TODO: fix multi save states
-        //this.props.notifyApp({ticTacToeState:this.state});
-    }
-
-    clearData() {
-        return {board: [[0, 0, 0], [0, 0, 0], [0, 0, 0]], turnX: true, turn: 0, winner: 0};
-    }
-
-    init() {
-        this.setState(this.clearData());
-    }
-
-    checkWinner(board) {
+    checkWinner = (board) => {
         let last;
         for (let i = 0; i < 3; i++) {
             last = board[i][0];
@@ -61,10 +47,11 @@ class TicTacToe extends React.Component {
         if (board[0][2] && board[0][2] === board[1][1] && board[1][1] === board[2][0])
             return board[0][2];
         return 0;
-    }
+    };
 
-    put(x, y) {
-        this.setState(prevState => {
+    put = (x, y) => {
+        this.service.set((prevState) => {
+            console.log(prevState, "csacsacsa");
             prevState.board[x][y] = prevState.turnX ? 1 : 2;
             prevState.turnX = !prevState.turnX;
             prevState.turn++;
@@ -80,34 +67,42 @@ class TicTacToe extends React.Component {
                         break;
                 }
             }
-            return prevState;
+            return {...prevState};
         });
-    }
+    };
 
     render() {
+        const {winner} = this.service.get;
         return (
-            <div className='grid'>
-                {(this.state.winner > 0 || this.state.turn >= 9) &&
-                <Winner winner={this.state.winner} init={this.init}/>
-                }
-                {!this.state.winner && this.state.turn < 9 &&
+            <PlaygroundContextConsumer>
+                {
+                    ({ticTacToe: service}) => (
+                        <div className='grid'>
+                            {(service.get.winner > 0 || service.get.turn >= 9) &&
+                            <Winner winner={service.get.winner} init={this.init}/>
+                            }
+                            {!service.get.winner && service.get.turn < 9 &&
 
-                this.state.board.map((row, x) =>
-                    <Row key={`${row}${x}`} className="flex flex-column" >
-                        {
-                            row.map((cell, y) =>
-                                <Col sm={1} key={`${row}${x}${cell}${y}`}>
-                                    <Cell cell={cell} x={x} y={y} put={this.put}/>
-                                </Col>
+                            service.get.board.map((row, x) =>
+                                <Row key={`${row}${x}`} className="flex flex-column">
+                                    {
+                                        row.map((cell, y) =>
+                                            <Col sm={1} key={`${row}${x}${cell}${y}`}>
+                                                <Cell x={x} y={y} put={this.put} cell={cell} />
+                                            </Col>
+                                        )
+                                    }
+                                </Row>
                             )
-                        }
-                    </Row>
-                )
+                            }
+                        </div>)
                 }
-            </div>
+
+            </PlaygroundContextConsumer>
         );
     }
 }
 
+TicTacToe.contextType = PlaygroundContext;
 export default TicTacToe;
 

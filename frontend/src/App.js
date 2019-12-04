@@ -4,7 +4,6 @@ import {LinkContainer} from 'react-router-bootstrap'
 import {Navbar} from "react-bootstrap";
 import logo from './logo.svg';
 import Chat from './components/chat/Chat';
-import TicTacToe from './components/tic-tac-toe/TicTacToe';
 import Quiz from './components/quiz/Quiz';
 import MainPage from './components/mainPage/MainPage';
 import english from './dictionaries/english';
@@ -13,34 +12,20 @@ import LangContext from './LangContext'
 import Nav from "react-bootstrap/Nav";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import Gallery from "./components/gallery/Gallery";
+import TicTacToe from "./components/tic-tac-toe/TicTacToe";
+import usePlayground from "./hooks/usePlayground";
+import {PlaygroundContextProvider} from "./PlaygroundContext";
 
 const codeToDic = {en: english, heb: hebrew};
 
-class App extends React.Component {
+export default () => {
+    const [lang, setLang] = React.useState('en');
+    const _usePlayground = usePlayground();
+    const dictionary = codeToDic[lang];
 
-    constructor(props, context) {
-        super(props, context);
-        this.state = {chatState: null, ticTacToeState: null, quizState: null, galleryState: null, lang: "en"};
+    return (
+        <PlaygroundContextProvider value={_usePlayground}>
 
-        this.notify = this.notify.bind(this);
-        this.setLang = this.setLang.bind(this);
-    }
-
-    notify(someState) {
-        this.setState(someState);
-    }
-
-    setLang(lang) {
-        this.setState(prevState => {
-            prevState.lang = lang;
-            return prevState;
-        });
-    }
-
-
-    render() {
-        const dictionary = codeToDic[this.state.lang];
-        return (
             <LangContext.Provider value={dictionary}>
                 <Router>
                     <Navbar bg="dark" variant="dark">
@@ -70,34 +55,36 @@ class App extends React.Component {
                                 }
                             </NavDropdown>
                         </Nav>
-                        {/*<Nav className="ml-auto pr-md-5" style={{marginRight: '30px'}}>*/}
-                        {/*    <NavDropdown title={dictionary["langMenu"]["title"]} id="basic-nav-dropdown">*/}
-                        {/*        {*/}
-                        {/*            ["en", "heb"].map((code, index) =>*/}
-                        {/*                <NavDropdown.Item key={`${code}${index}`} onClick={() => {*/}
-                        {/*                    this.setLang(code);*/}
-                        {/*                }}>{dictionary["langMenu"]["items"][code]}</NavDropdown.Item>)*/}
-                        {/*        }*/}
-                        {/*    </NavDropdown>*/}
-                        {/*</Nav>*/}
                     </Navbar>
                     <Route exact path={'/'} component={MainPage}/>
-                    <Route path={'/chat'}
-                           component={() => <Chat initialState={this.state.chatState}
-                                                  notifyApp={this.notify}/>}/>
-                    <Route path={'/ticTacToe'}
-                           component={() => <TicTacToe initialState={this.state.ticTacToeState}
-                                                       notifyApp={this.notify}/>}/>
-                    <Route path={'/quiz'}
-                           component={() => <Quiz initialState={this.state.quizState}
-                                                  notifyApp={this.notify}/>}/>
-                    <Route path={'/gallery'}
-                           component={() => <Gallery initialState={this.state.galleryState}
-                                                     notifyApp={this.notify}/>}/>
+                    {/*<Route path={'/chat'} component={Chat}/>*/}
+                    <Route path={'/ticTacToe'} component={TicTacToe}/>
+                    {/*<Route path={'/quiz'} component={Quiz}/>*/}
+                    {/*<Route path={'/gallery'} component={Gallery}/>*/}
                 </Router>
             </LangContext.Provider>
-        );
-    }
+        </PlaygroundContextProvider>
+    );
 }
 
-export default App;
+
+{/*<Nav className="ml-auto pr-md-5" style={{marginRight: '30px'}}>*/
+}
+{/*    <NavDropdown title={dictionary["langMenu"]["title"]} id="basic-nav-dropdown">*/
+}
+{/*        {*/
+}
+{/*            ["en", "heb"].map((code, index) =>*/
+}
+{/*                <NavDropdown.Item key={`${code}${index}`} onClick={() => {*/
+}
+{/*                    this.setLang(code);*/
+}
+{/*                }}>{dictionary["langMenu"]["items"][code]}</NavDropdown.Item>)*/
+}
+{/*        }*/
+}
+{/*    </NavDropdown>*/
+}
+{/*</Nav>*/
+}

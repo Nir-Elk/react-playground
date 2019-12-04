@@ -10,7 +10,7 @@ class Image extends React.Component {
     render(props) {
         return (
             <>
-                <img className="small-image" src={this.props.image} alt=""/>
+                <img className="small-image" src={this.props.image.small} alt=""/>
             </>
         );
     }

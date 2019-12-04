@@ -1,27 +1,15 @@
-import React from 'react'
+import React , { useEffect}from 'react'
 import Image from "./Image";
 import './Gallery.css'
+import useScrolledBottom from "../../hooks/useScrolledBottom";
 
 
+export default ({images}) => {
 
-class GalleryImages extends React.Component {
-
-    constructor(props, context) {
-        super(props, context);
-    }
-
-    render(props) {
-        return (
-            <div className="gallery-images">
-                {
-                    !!this.props.images &&
-                    this.props.images.map((img,index) =>
-                        <Image image={img.small} key={index}/>
-                    )
-                }
-            </div>
-        );
-    }
+    return (
+        <div className="gallery-images">
+            {images.map((img, index) =>
+                    <Image image={img} key={index}/>)}
+        </div>
+    );
 }
-
-export default GalleryImages;
