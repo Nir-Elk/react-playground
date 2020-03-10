@@ -1,13 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="afb6bb26-6c55-4775-863e-1420bbad2dcf" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/frontend/src/dictionaries/english.json" afterDir="false" />
+    <list default="true" id="afb6bb26-6c55-4775-863e-1420bbad2dcf" name="Default Changelist" comment="move work to laptop">
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/react-playground.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/hooks/useScrolledBottom.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/public/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/LangContext.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/LangContext.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/chat/Chat.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/chat/Chat.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/gallery/Gallery.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/gallery/Gallery.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/gallery/GalleryImages.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/gallery/Image.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/gallery/Search.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/quiz/Navigation.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/quiz/Navigation.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/quiz/Question.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/quiz/Question.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/quiz/Quiz.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/quiz/Quiz.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/quiz/Quiz.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/quiz/Quiz.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/tic-tac-toe/Cell.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/tic-tac-toe/Cell.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/tic-tac-toe/Sign.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/tic-tac-toe/Sign.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/tic-tac-toe/TicTacToe.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/tic-tac-toe/TicTacToe.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/tic-tac-toe/Winner.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/tic-tac-toe/Winner.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/dictionaries/english.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/dictionaries/english.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/dictionaries/hebrew.json" beforeDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -21,21 +43,23 @@
       </list>
     </option>
   </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>dependencies</find>
-    </findStrings>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
-  <component name="ProjectId" id="1SkgZK8PDXWJyCcQ0wMdpZNFwPW" />
+  <component name="ProjectId" id="1R6DvjC3x3idqriSXbDTGrfQUfc" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../multiple-questions-quiz" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/frontend/src/components/gallery" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -45,7 +69,8 @@
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="settings.github" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="ts.external.directory.path" value="C:\Users\nirel\AppData\Local\JetBrains\Toolbox\apps\WebStorm\ch-0\193.6494.34\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -55,22 +80,12 @@
       <recent name="C:\Users\Aviv\WebstormProjects\react-playground\src\components\mainPage" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\School\react-playground\frontend\src\components\gallery" />
+      <recent name="E:\School\react-playground\frontend\src" />
       <recent name="C:\Users\nirel\WebstormProjects\react-playground" />
       <recent name="C:\Users\Aviv\WebstormProjects\react-playground\src\components\tic-tac-toe" />
       <recent name="C:\Users\Aviv\WebstormProjects\react-playground\src\components\chat" />
     </key>
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
   </component>
   <component name="RunManager" selected="npm.npm start">
     <configuration name="Debug Application" type="JavascriptDebugType" uri="http://localhost:3000">
@@ -95,6 +110,18 @@
       <item itemvalue="npm.npm start" />
     </list>
   </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -110,7 +137,32 @@
       <workItem from="1561364119745" duration="5062000" />
       <workItem from="1561394853531" duration="729000" />
       <workItem from="1561403650820" duration="4626000" />
-      <workItem from="1572113062546" duration="1815000" />
+      <workItem from="1561918821044" duration="549000" />
+      <workItem from="1562444361988" duration="11000" />
+      <workItem from="1568978892869" duration="630000" />
+      <workItem from="1569253192607" duration="804000" />
+      <workItem from="1572276597439" duration="13650000" />
+      <workItem from="1572613184380" duration="63000" />
+      <workItem from="1573709356275" duration="1219000" />
+      <workItem from="1574182012270" duration="532000" />
+      <workItem from="1574689976969" duration="9830000" />
+      <workItem from="1574775201432" duration="7478000" />
+      <workItem from="1574979399386" duration="2987000" />
+      <workItem from="1575386284358" duration="8775000" />
+      <workItem from="1575815186704" duration="1308000" />
+      <workItem from="1576064523827" duration="772000" />
+      <workItem from="1576065314095" duration="12369000" />
+      <workItem from="1576662714605" duration="10997000" />
+      <workItem from="1578592282706" duration="306000" />
+      <workItem from="1578824134281" duration="15483000" />
+      <workItem from="1579196764134" duration="5000" />
+      <workItem from="1579537527315" duration="11206000" />
+      <workItem from="1580131244225" duration="6721000" />
+      <workItem from="1583249142252" duration="1594000" />
+      <workItem from="1583336500768" duration="1627000" />
+      <workItem from="1583343954202" duration="783000" />
+      <workItem from="1583684108553" duration="9050000" />
+      <workItem from="1583773533982" duration="3680000" />
     </task>
     <task id="LOCAL-00001" summary="add Quiz">
       <created>1561368503660</created>
@@ -133,7 +185,70 @@
       <option name="project" value="LOCAL" />
       <updated>1561408033960</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="add to heroku">
+      <created>1569253821766</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1569253821766</updated>
+    </task>
+    <task id="LOCAL-00005" summary="add multi language but need to add RTL!!!">
+      <created>1572291010962</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1572291010962</updated>
+    </task>
+    <task id="LOCAL-00006" summary="add multi language but need to add RTL!!!">
+      <created>1572287571567</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1572287571567</updated>
+    </task>
+    <task id="LOCAL-00007" summary="add multi language but need to add RTL!!!">
+      <created>1572287731738</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1572287731738</updated>
+    </task>
+    <task id="LOCAL-00008" summary="add multi language but need to add RTL!!!">
+      <created>1572287797091</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1572287797091</updated>
+    </task>
+    <task id="LOCAL-00009" summary="removing lang btn">
+      <created>1574690184222</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1574690184222</updated>
+    </task>
+    <task id="LOCAL-00010" summary="removing lang btn">
+      <created>1574706523708</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1574706523708</updated>
+    </task>
+    <task id="LOCAL-00011" summary="fix gallery.">
+      <created>1574791642899</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1574791642899</updated>
+    </task>
+    <task id="LOCAL-00012" summary="move work to laptop">
+      <created>1575483417954</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1575483417954</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -144,7 +259,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
@@ -153,6 +270,64 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="add Quiz" />
     <MESSAGE value="add to heroku" />
-    <option name="LAST_COMMIT_MESSAGE" value="add to heroku" />
+    <MESSAGE value="add multi language but need to add RTL!!!" />
+    <MESSAGE value="removing lang btn" />
+    <MESSAGE value="fix gallery." />
+    <MESSAGE value="move work to laptop" />
+    <option name="LAST_COMMIT_MESSAGE" value="move work to laptop" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="552" y="179" key="#Inspections" timestamp="1578841552455">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="179" key="#Inspections/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1578841552455" />
+    <state x="552" y="179" width="816" height="729" key="#Intentions" timestamp="1578839168751">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="179" width="816" height="729" key="#Intentions/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1578839168751" />
+    <state x="640" y="249" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1583684736862">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="640" y="249" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1583684736862" />
+    <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1583684235097">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1583684235097" />
+    <state x="585" y="114" key="CommitChangelistDialog2" timestamp="1575483416387">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="585" y="114" key="CommitChangelistDialog2/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1575483416387" />
+    <state width="1899" height="283" key="GridCell.Tab.0.bottom" timestamp="1583856853819">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1899" height="283" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1583856853819" />
+    <state width="1899" height="283" key="GridCell.Tab.0.center" timestamp="1583856853819">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1899" height="283" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1583856853819" />
+    <state width="1899" height="283" key="GridCell.Tab.0.left" timestamp="1583856853819">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1899" height="283" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1583856853819" />
+    <state width="1899" height="283" key="GridCell.Tab.0.right" timestamp="1583856853819">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1899" height="283" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1583856853819" />
+    <state x="461" y="162" key="SettingsEditor" timestamp="1576065296047">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="461" y="162" key="SettingsEditor/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1576065296047" />
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1575483421159">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1575483421159" />
+    <state x="657" y="252" width="606" height="536" key="find.popup" timestamp="1583689056341">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="657" y="252" width="606" height="536" key="find.popup/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1583689056341" />
+    <state x="670" y="311" key="git4idea.merge.GitPullDialog" timestamp="1575815268376">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="670" y="311" key="git4idea.merge.GitPullDialog/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1575815268376" />
   </component>
 </project>

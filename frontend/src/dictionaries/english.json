@@ -12,8 +12,7 @@
   "langMenu": {
     "title": "Languages",
     "items": {
-      "en": "english",
-      "heb": "עברית"
+      "en": "english"
     }
   },
   "mainPage": {
@@ -29,20 +28,13 @@
     "send":"Send"
   },
   "ticTacToe": {
-    "noWinner": "There is no winner",
+    "noWinner": "Draw!",
     "theWinner": "The Winner is:",
     "startOver": "Start Over"
   },
   "quiz": {
     "back": "Back",
     "next": "Next",
-    "done": "Done",
-    "startOver": "Start Over",
-    "gameOver": "Game Over!",
-    "grade": "Your Grade is "
-  },
-  "search": {
-    "search": "Search",
     "done": "Done",
     "startOver": "Start Over",
     "gameOver": "Game Over!",

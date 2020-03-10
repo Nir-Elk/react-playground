@@ -4,6 +4,7 @@ import Navigation from './Navigation'
 import GameOver from './GameOver'
 import data from './data'
 import './Quiz.css'
+import Card from "react-bootstrap/Card";
 
 class Quiz extends React.Component {
     constructor(props, context) {
@@ -53,12 +54,12 @@ class Quiz extends React.Component {
             <div className={"main-container"}>
                 {this.state.currentQuestion === this.state.questions.length &&
                     <GameOver grade={this.calcGrade()} init={this.init}/>}
-                {this.state.currentQuestion !== this.state.questions.length && <div>
+                {this.state.currentQuestion !== this.state.questions.length && <Card body>
                     <Question question={this.state.questions[this.state.currentQuestion]}
                               selectAnswer={this.selectAnswer}/>
                     <Navigation current={this.state.currentQuestion} selectQuestion={this.selectQuestion}
                                 numOfQuestions={this.state.questions.length}/>
-                </div>}
+                </Card>}
             </div>
         );
     }

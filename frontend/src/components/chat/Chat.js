@@ -4,7 +4,7 @@ import SendMessage from './SendMessage'
 import Messages from './Messages'
 import openSocket from 'socket.io-client'
 import ClientsList from './ClientsList'
-import {Col, Container, Row} from "react-bootstrap";
+import {Col, Container, Row} from 'react-bootstrap'
 import './Chat.css'
 
 let socket;
@@ -13,15 +13,11 @@ let socket;
 class Chat extends React.Component {
 
     constructor(props, context) {
-        //socket = openSocket('https://react-my-playground.herokuapp.com');
-        socket = openSocket('http://localhost:8080');
+        socket = openSocket('https://react-my-playground.herokuapp.com');
+        //socket = openSocket('http://localhost:8080');
 
         super(props, context);
-        if (props.initialState) {
-            this.state = props.initialState;
-            socket.emit('userConnected', {name: this.state.name});
-        } else
-            this.state = {name: null, messages: [], clients: []};
+        this.state = {name: null, messages: [], clients: []};
         this.setName = this.setName.bind(this);
         this.sendMessage = this.sendMessage.bind(this);
     }
@@ -48,7 +44,7 @@ class Chat extends React.Component {
 
     componentWillUnmount() {
         socket.disconnect();
-        this.props.notifyApp({chatState: this.state});
+
     }
 
     setName(name) {
@@ -72,7 +68,7 @@ class Chat extends React.Component {
                 {this.state.name !== null &&
                 <Container>
                     <Row>
-                        <Col xs={3}><ClientsList clients={this.state.clients}/></Col>
+                        <Col xs={3} className={'card'}><ClientsList clients={this.state.clients}/></Col>
                         <Col xs={9}>
                             <Messages messages={this.state.messages}/>
                             <SendMessage sendMessage={this.sendMessage}/>

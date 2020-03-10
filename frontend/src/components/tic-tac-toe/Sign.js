@@ -5,7 +5,7 @@ class Sign extends React.Component {
     render(props) {
         const sign = this.props.sign === 1?"X":"O";
         return (
-            <div style={{fontSize: '5rem'}}>
+            <div className={'sign'} style={{fontSize: '5rem'}}>
                 {sign}
             </div>
         );

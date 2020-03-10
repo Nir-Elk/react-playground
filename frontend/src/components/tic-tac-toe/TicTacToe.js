@@ -2,37 +2,28 @@ import React from "react";
 import Cell from "./Cell"
 import Winner from "./Winner";
 import "./TicTacToe.css"
-import {Row,Col} from "react-bootstrap";
+import {Col, Row} from "react-bootstrap";
 
 class TicTacToe extends React.Component {
 
     constructor(props, context) {
         super(props, context);
-        if (props.initialState)
-            this.state = props.initialState;
-        else
-            this.state = this.clearData();
+        this.state = {};
         this.init = this.init.bind(this);
         this.put = this.put.bind(this);
     }
 
     componentWillMount() {
-    }
-
-    componentWillUnmount() {
-        // TODO: fix multi save states
-        //this.props.notifyApp({ticTacToeState:this.state});
-    }
-
-    clearData() {
-        return {board: [[0, 0, 0], [0, 0, 0], [0, 0, 0]], turnX: true, turn: 0, winner: 0};
+        this.init();
     }
 
     init() {
-        this.setState(this.clearData());
+        this.setState({board: [[0, 0, 0], [0, 0, 0], [0, 0, 0]], turnX: true, turn: 0, winner: 0, checking: false});
     }
 
     checkWinner(board) {
+        if ((board[0][0] === board[1][1] && board[1][1] === board[2][2]) || (board[2][0] === board[1][1] && board[1][1] === board[0][2]))
+            return board[1][1];
         let last;
         for (let i = 0; i < 3; i++) {
             last = board[i][0];
@@ -56,32 +47,29 @@ class TicTacToe extends React.Component {
             if (last)
                 return last
         }
-        if (board[0][0] && board[0][0] === board[1][1] && board[1][1] === board[2][2])
-            return board[0][0];
-        if (board[0][2] && board[0][2] === board[1][1] && board[1][1] === board[2][0])
-            return board[0][2];
         return 0;
     }
 
     put(x, y) {
-        this.setState(prevState => {
-            prevState.board[x][y] = prevState.turnX ? 1 : 2;
-            prevState.turnX = !prevState.turnX;
-            prevState.turn++;
-            if (prevState.turn >= 5) {
-                switch (this.checkWinner(prevState.board)) {
-                    case 1:
-                        prevState.winner = 1;
-                        break;
-                    case 2:
-                        prevState.winner = 2;
-                        break;
-                    default:
-                        break;
+
+            this.setState(prevState => {
+                prevState.board[x][y] = prevState.turnX ? 1 : 2;
+                prevState.turnX = !prevState.turnX;
+                prevState.turn++;
+                if (prevState.turn >= 5) {
+                    switch (this.checkWinner(prevState.board)) {
+                        case 1:
+                            prevState.winner = 1;
+                            break;
+                        case 2:
+                            prevState.winner = 2;
+                            break;
+                        default:
+                            break;
+                    }
                 }
-            }
-            return prevState;
-        });
+                return prevState;
+            });
     }
 
     render() {
@@ -93,7 +81,7 @@ class TicTacToe extends React.Component {
                 {!this.state.winner && this.state.turn < 9 &&
 
                 this.state.board.map((row, x) =>
-                    <Row key={`${row}${x}`} className="flex flex-column" >
+                    <Row key={`${row}${x}`} className="flex flex-column">
                         {
                             row.map((cell, y) =>
                                 <Col sm={1} key={`${row}${x}${cell}${y}`}>

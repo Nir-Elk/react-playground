@@ -19,7 +19,7 @@ class Navigation extends React.Component {
                             <Button onClick={() => selectQuestion(current - 1)} disabled={!current}
                                     variant="secondary">{quiz["back"]}</Button>
                             <div>
-                                {nums.map(value => <Badge pill variant={current === value ? "primary" : "secondary"}
+                                {nums.map(value => <Badge className={"navigation-number"} pill variant={current === value ? "primary" : "secondary"}
                                                           onClick={() => selectQuestion(value)}
                                                           key={value}>{value + 1}</Badge>)}
                             </div>

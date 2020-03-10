@@ -8,19 +8,17 @@ import TicTacToe from './components/tic-tac-toe/TicTacToe';
 import Quiz from './components/quiz/Quiz';
 import MainPage from './components/mainPage/MainPage';
 import english from './dictionaries/english';
-import hebrew from './dictionaries/hebrew';
 import LangContext from './LangContext'
 import Nav from "react-bootstrap/Nav";
 import NavDropdown from "react-bootstrap/NavDropdown";
-import Gallery from "./components/gallery/Gallery";
 
-const codeToDic = {en: english, heb: hebrew};
+const codeToDic = {en: english};
 
 class App extends React.Component {
 
     constructor(props, context) {
         super(props, context);
-        this.state = {chatState: null, ticTacToeState: null, quizState: null, galleryState: null, lang: "en"};
+        this.state = {chatState: null, ticTacToeState: null, quizState: null, lang: "en"};
 
         this.notify = this.notify.bind(this);
         this.setLang = this.setLang.bind(this);
@@ -57,7 +55,7 @@ class App extends React.Component {
                                 {dictionary.siteName}
                             </Navbar.Brand>
                         </Link>
-                        <Nav className="ml-auto pr-md-5" style={{marginRight: '30px'}}>
+                        <Nav className="ml-auto pr-md-5" style={{ marginRight: '30px'}}>
                             <NavDropdown title={dictionary.menu.title} id="basic-nav-dropdown">
                                 {
                                     ["chat", "ticTacToe", "quiz"].map((item, index) =>
@@ -70,30 +68,14 @@ class App extends React.Component {
                                 }
                             </NavDropdown>
                         </Nav>
-                        {/*<Nav className="ml-auto pr-md-5" style={{marginRight: '30px'}}>*/}
-                        {/*    <NavDropdown title={dictionary["langMenu"]["title"]} id="basic-nav-dropdown">*/}
-                        {/*        {*/}
-                        {/*            ["en", "heb"].map((code, index) =>*/}
-                        {/*                <NavDropdown.Item key={`${code}${index}`} onClick={() => {*/}
-                        {/*                    this.setLang(code);*/}
-                        {/*                }}>{dictionary["langMenu"]["items"][code]}</NavDropdown.Item>)*/}
-                        {/*        }*/}
-                        {/*    </NavDropdown>*/}
-                        {/*</Nav>*/}
                     </Navbar>
                     <Route exact path={'/'} component={MainPage}/>
                     <Route path={'/chat'}
-                           component={() => <Chat initialState={this.state.chatState}
-                                                  notifyApp={this.notify}/>}/>
+                           component={() => <Chat/>}/>
                     <Route path={'/ticTacToe'}
-                           component={() => <TicTacToe initialState={this.state.ticTacToeState}
-                                                       notifyApp={this.notify}/>}/>
+                           component={() => <TicTacToe/>}/>
                     <Route path={'/quiz'}
-                           component={() => <Quiz initialState={this.state.quizState}
-                                                  notifyApp={this.notify}/>}/>
-                    <Route path={'/gallery'}
-                           component={() => <Gallery initialState={this.state.galleryState}
-                                                     notifyApp={this.notify}/>}/>
+                           component={() => <Quiz/>}/>
                 </Router>
             </LangContext.Provider>
         );

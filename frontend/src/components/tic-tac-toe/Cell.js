@@ -8,12 +8,12 @@ class Cell extends React.Component {
         return (
             <>
                 {cell === 0 &&
-                    <div className="cell" onClick={() => put(x, y)}> </div>
+                <div className="cell" onClick={() => put(x, y)}/>
                 }
                 {cell !== 0 &&
-                    <div className="cell">
-                        <Sign sign={cell}/>
-                    </div>
+                <div className="cell">
+                    <Sign sign={cell}/>
+                </div>
                 }
             </>
         );

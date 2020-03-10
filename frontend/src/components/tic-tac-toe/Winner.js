@@ -1,6 +1,8 @@
 import React from "react"
 import Sign from "./Sign"
 import LangContext from "../../LangContext";
+import {Button} from "react-bootstrap";
+
 
 class Winner extends React.Component {
 
@@ -10,10 +12,10 @@ class Winner extends React.Component {
                 {
                     ({ticTacToe}) => (
                         <div style={{fontSize: '3rem'}}>
-                            {this.props.winner === 0 ? ticTacToe["noWinner"] : ticTacToe["theWinner"]}
+                            <div className={'pb-2'}> {this.props.winner === 0 ? ticTacToe["noWinner"] : ticTacToe["theWinner"]} </div>
                             {this.props.winner > 0 && <Sign sign={this.props.winner}/>}
                             <div>
-                                <button onClick={() => this.props.init()}>{ticTacToe["startOver"]}</button>
+                                <Button onClick={() => this.props.init()}>{ticTacToe["startOver"]}</Button>
                             </div>
                         </div>)
                 }
